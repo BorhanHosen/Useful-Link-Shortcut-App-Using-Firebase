@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { db } from "./firebase";
 import { collection, onSnapshot, deleteDoc, doc } from "firebase/firestore";
+import { Link } from "react-router-dom";
 
 export default function Home() {
   const [websites, setWebsites] = useState([]);
@@ -34,6 +35,12 @@ export default function Home() {
           >
             Visit
           </a>
+          <Link
+            to={`/edit/${site.id}`}
+            className="absolute top-2 right-10 bg-yellow-500 hover:bg-yellow-600 text-sm px-2 py-1 rounded"
+          >
+            ✏️
+          </Link>
           <button
             onClick={() => handleDelete(site.id)}
             className="absolute top-2 right-2 bg-red-600 hover:bg-red-700 text-sm px-2 py-1 rounded"

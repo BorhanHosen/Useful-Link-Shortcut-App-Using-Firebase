@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Home from "./Home";
 import AddLink from "./AddLink";
+import EditLink from "./EditLink";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/add" element={<AddLink />} />
+          <Route path="/edit/:id" element={<EditLink />} />
         </Routes>
       </div>
     </Router>
